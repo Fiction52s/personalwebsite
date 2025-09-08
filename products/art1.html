@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<title>Sunrise Dreams - Art Store</title>
+	<link rel="stylesheet" href="../style.css">
+
+	<!-- PayPal Cart Script -->
+	<script src="https://www.paypalobjects.com/ncp/cart/cart.js" data-merchant-id="ZXZUGE4T74ZWJ"></script>
+</head>
+<body>
+	<nav>
+		<ul>
+			<li><a href="../index.html">Home</a></li>
+			<li><a href="../artstore.html">Back to Store</a></li>
+		</ul>
+	</nav>
+
+	<main class="product-container">
+		<!-- Left: Image -->
+		<div class="product-image">
+			<img src="../art1.png" alt="Sunrise Dreams">
+		</div>
+
+		<!-- Right: Details -->
+		<div class="product-info">
+			<h1>Sunrise Dreams</h1>
+			<p class="price">$100.00 USD</p>
+			<p class="description">
+				A vibrant piece capturing the first light of dawn. Perfect for modern interiors or collectors of bold, surreal art.
+			</p>
+
+			<!-- Example Option (Edition / Frame) -->
+			<label for="edition">Edition:</label>
+			<select id="edition" name="edition">
+				<option value="standard">Standard Print</option>
+				<option value="framed">Framed Print (+$20)</option>
+				<option value="canvas">Canvas Edition (+$50)</option>
+			</select>
+
+			<!-- Quantity Selector -->
+			<div class="quantity">
+				<label for="qty">Quantity:</label>
+				<input type="number" id="qty" name="quantity" min="1" value="1">
+			</div>
+
+			<!-- PayPal Add to Cart -->
+			<paypal-add-to-cart-button data-id="5EYXBL6RG996Q"></paypal-add-to-cart-button>
+			<script>
+				cartPaypal.AddToCart({ id: "5EYXBL6RG996Q" })
+			</script>
+
+			<!-- Collapsible Sections -->
+			<div class="accordion">
+				<button class="accordion-btn">Materials</button>
+				<div class="accordion-content">
+					<p>High-quality archival inks on acid-free paper. Optional canvas edition available.</p>
+				</div>
+
+				<button class="accordion-btn">Dimensions</button>
+				<div class="accordion-content">
+					<p>Print size: 18"x24" (standard). Custom sizes available on request.</p>
+				</div>
+
+				<button class="accordion-btn">Shipping & Returns</button>
+				<div class="accordion-content">
+					<p>Ships worldwide in 5–7 business days. Returns accepted within 14 days.</p>
+				</div>
+
+				<button class="accordion-btn">Care Instructions</button>
+				<div class="accordion-content">
+					<p>Keep away from direct sunlight. Frame under glass for maximum longevity.</p>
+				</div>
+			</div>
+		</div>
+	</main>
+
+	<script>
+		// Accordion functionality
+		const buttons = document.querySelectorAll(".accordion-btn");
+		buttons.forEach(btn => {
+			btn.addEventListener("click", () => {
+				btn.classList.toggle("active");
+				const content = btn.nextElementSibling;
+				if (content.style.maxHeight) {
+					content.style.maxHeight = null;
+				} else {
+					content.style.maxHeight = content.scrollHeight + "px";
+				}
+			});
+		});
+	</script>
+</body>
+</html>

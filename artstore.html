@@ -5,6 +5,9 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 	<title>Art Store</title>
 	<link rel="stylesheet" href="style.css">
+
+	<!-- PayPal Cart Script (only once per site) -->
+	<script src="https://www.paypalobjects.com/ncp/cart/cart.js" data-merchant-id="ZXZUGE4T74ZWJ"></script>
 </head>
 <body>
 	<nav>
@@ -18,24 +21,34 @@
 	</nav>
 
 	<h1>Art Store</h1>
-	<p>Welcome to my art store! Browse and purchase original pieces below.</p>
 
-	<section>
-		<h2>Featured Pieces</h2>
+	<!-- View Cart Button -->
+	<div class="cart-button">
+		<paypal-cart-button data-id="pp-view-cart"></paypal-cart-button>
+		<script>
+			cartPaypal.Cart({ id: "pp-view-cart" })
+		</script>
+	</div>
 
-		<div class="art-piece">
-			<img src="art1.jpg" alt="Art Piece 1" width="300">
-			<p><strong>Title:</strong> Sunrise Dreams</p>
-			<p><strong>Price:</strong> $100</p>
-			<button>Buy Now</button>
-		</div>
+	<!-- Product Grid -->
+	<div class="product-grid">
+		<a href="products/art1.html" class="product-card">
+			<img src="art1.png" alt="Art 1">
+			<h3>Sunrise Dreams</h3>
+			<p>$100</p>
+		</a>
 
-		<div class="art-piece">
-			<img src="art2.jpg" alt="Art Piece 2" width="300">
-			<p><strong>Title:</strong> Abstract Motion</p>
-			<p><strong>Price:</strong> $150</p>
-			<button>Buy Now</button>
-		</div>
-	</section>
+		<a href="products/art2.html" class="product-card">
+			<img src="art2.png" alt="Art 2">
+			<h3>Midnight Echo</h3>
+			<p>$120</p>
+		</a>
+
+		<a href="products/art3.html" class="product-card">
+			<img src="art3.png" alt="Art 3">
+			<h3>Fractured Horizon</h3>
+			<p>$150</p>
+		</a>
+	</div>
 </body>
 </html>
