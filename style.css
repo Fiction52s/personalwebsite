@@ -168,6 +168,6 @@ p, section {
 
 /* Background for post-splash content */
 .game-content {
-	background: url("BG.png") repeat;
+	background: url("./BG.png") repeat;
 	padding: 2rem 1rem;
 }
