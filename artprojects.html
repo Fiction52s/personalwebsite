@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<title>Art/Crafts</title>
+	<link rel="stylesheet" href="style.css">
+</head>
+<body>
+	<nav>
+		<ul>
+			<li><a href="index.html">Home</a></li>
+			<li><a href="coaching.html">Melee Coaching</a></li>
+			<li><a href="kinetic.html">Kinetic: Break All Limits</a></li>
+			<li><a href="artprojects.html">Art/Crafts</a></li>
+			<li><a href="othersoftware.html">Other Software Projects</a></li>
+		</ul>
+	</nav>
+
+	<main class="project-container">
+		<!-- Resin Projects -->
+		<section class="project">
+			<h1>Resin Projects</h1>
+			<p class="project-description">
+				I've recently started working with resin to preserve flowers and arrange them in ways that I find aesthetically pleasing.
+			</p>
+			<div class="image-gallery">
+				<img src="art/flowers1.jfif" alt="Resin flowers 1">
+				<img src="art/flowers2.jfif" alt="Resin flowers 2">
+				<img src="art/flowers3.jfif" alt="Resin flowers 3">
+				<img src="art/flowers4.jfif" alt="Resin flowers 4">
+				<img src="art/hex1.jfif" alt="Resin hexagon 1">
+				<img src="art/hex2.jfif" alt="Resin hexagon 2">
+			</div>
+		</section>
+
+		<!-- 3D Painted Models -->
+		<section class="project">
+			<h2>3D Painted Models</h2>
+			<p class="project-description">
+				I’ve also been painting 3D printed models. Here are some of the works I’ve finished so far:
+			</p>
+			<div class="image-gallery">
+				<img src="art/3dpainted.jfif" alt="3D Painted Model">
+				<img src="art/paintedfalcos.jfif" alt="Painted Falcos">
+				<img src="art/paintedsheik.jfif" alt="Painted Sheik">
+				<img src="art/sleepingfox.jfif" alt="Sleeping Fox">
+				<img src="art/unpaintedfalco.jfif" alt="Unpainted Falco">
+			</div>
+		</section>
+
+		<!-- Combination Project -->
+		<section class="project">
+			<h2>Combining Resin and 3D Models</h2>
+			<p class="project-description">
+				My plan is to combine these two hobbies by pairing painted 3D figurines with resin bases. Here’s an early example:
+			</p>
+			<div class="image-gallery">
+				<img src="art/falco1.jfif" alt="Falco with resin base">
+			</div>
+		</section>
+	</main>
+
+	<!-- Lightbox Overlay for enlarging images -->
+	<div id="lightbox">
+		<span id="close">&times;</span>
+		<img id="lightbox-img" src="" alt="Expanded view">
+	</div>
+
+	<script>
+		// Lightbox functionality
+		const lightbox = document.getElementById("lightbox");
+		const lightboxImg = document.getElementById("lightbox-img");
+		const close = document.getElementById("close");
+
+		document.querySelectorAll(".image-gallery img").forEach(img => {
+			img.addEventListener("click", () => {
+				lightbox.style.display = "flex";
+				lightboxImg.src = img.src;
+			});
+		});
+
+		close.addEventListener("click", () => {
+			lightbox.style.display = "none";
+		});
+	</script>
+</body>
+</html>
