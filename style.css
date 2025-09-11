@@ -697,3 +697,33 @@ p, section {
 	margin: 2rem auto;
 	width: 80%;
 }
+
+/* Base body text */
+body {
+	font-family: 'Inter', sans-serif;
+	color: #222;
+	line-height: 1.6;
+}
+
+/* Headings stand out */
+h1, h2, h3 {
+	font-family: 'Montserrat', sans-serif;
+	font-weight: 700;
+}
+
+/* Main header tweak */
+.main-header h1 {
+	font-size: 3rem;
+	font-weight: 700;
+	margin-bottom: 0.5rem;
+	text-align: center;
+}
+
+/* Roles look cleaner + subtle */
+.roles {
+	font-size: 1.25rem;
+	font-weight: 500;
+	color: #555; /* lighter gray for hierarchy */
+	text-align: center;
+	margin-bottom: 2rem;
+}
