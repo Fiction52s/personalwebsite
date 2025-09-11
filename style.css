@@ -546,3 +546,154 @@ p, section {
 	border-radius: 6px;
 }
 
+/* Main page clean look */
+.main-clean {
+	background: #fff;
+	color: #000;
+	font-family: Arial, sans-serif;
+	margin: 0;
+	padding: 0;
+}
+
+/* Header */
+.main-header {
+	text-align: center;
+	padding: 3rem 1rem 2rem;
+}
+/* Header styling */
+.main-header h1 {
+	font-size: 3rem;         /* Bigger than before */
+	font-weight: 700;
+	margin-bottom: 0.5rem;
+	text-align: center;
+}
+
+
+
+
+/* Preview grid */
+.preview-grid {
+	display: grid;
+	grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+	gap: 2rem;
+	padding: 2rem;
+	max-width: 1200px;
+	margin: 0 auto;
+}
+
+/* Preview cards */
+.preview-card {
+	display: block;
+	text-decoration: none;
+	color: inherit;
+	text-align: center;
+	transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.preview-card img {
+	width: 100%;
+	height: 200px;
+	object-fit: cover;
+	border-radius: 8px;
+	box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+	margin-bottom: 0.75rem;
+}
+.preview-card h2 {
+	font-size: 1.25rem;
+	margin: 0;
+}
+.preview-card:hover {
+	transform: translateY(-5px);
+	box-shadow: 0 6px 16px rgba(0,0,0,0.2);
+}
+
+/* Header image under name */
+.opener-img {
+	max-width: 300px;
+	width: 80%;
+	height: auto;
+	margin-top: 1rem;
+	border-radius: 8px;
+	box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+}
+
+/* Force grid to 2x2 */
+.preview-grid {
+	display: grid;
+	grid-template-columns: repeat(2, 1fr);
+	gap: 2rem;
+	padding: 2rem;
+	max-width: 1000px;
+	margin: 0 auto;
+}
+
+/* Cards with description */
+.preview-card {
+	display: block;
+	text-decoration: none;
+	color: inherit;
+	text-align: center;
+	transition: transform 0.3s ease, box-shadow 0.3s ease;
+	padding: 1rem;
+	border-radius: 8px;
+	background: #fafafa;
+	box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+.preview-card img {
+	width: 100%;
+	height: 180px;
+	object-fit: cover;
+	border-radius: 6px;
+	margin-bottom: 0.75rem;
+}
+.preview-card h2 {
+	font-size: 1.25rem;
+	margin: 0.5rem 0;
+}
+.preview-card p {
+	font-size: 0.95rem;
+	color: #333;
+	line-height: 1.4;
+}
+.preview-card:hover {
+	transform: translateY(-5px);
+	box-shadow: 0 6px 16px rgba(0,0,0,0.2);
+}
+
+/* Roles under name */
+.roles {
+	font-size: 1.25rem;      /* Bigger roles text */
+	font-weight: 400;
+	color: #444;
+	text-align: center;
+	margin-bottom: 2rem;
+}
+
+/* Row of opener images */
+/* Row of opener images */
+.opener-row {
+	display: flex;
+	justify-content: center;
+	gap: 2rem; /* a bit more breathing space between images */
+	flex-wrap: wrap;
+	margin: 1rem auto 2rem;
+	max-width: 1400px; /* wider than before */
+}
+
+.opener-row img {
+	flex: 1 1 30%;
+	min-width: 280px;  /* ensures they don’t shrink too small */
+	max-width: 100%;
+	height: auto;
+	border-radius: 8px;
+	box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+	object-fit: cover;
+}
+
+
+/* Divider before grid */
+.divider {
+	border: none;
+	border-top: 1px solid #ddd;
+	margin: 2rem auto;
+	width: 80%;
+}
