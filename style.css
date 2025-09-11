@@ -443,3 +443,106 @@ p, section {
 	border-radius: 8px;
 	box-shadow: 0 4px 12px rgba(0,0,0,0.25);
 }
+
+/* Coaching Page Layout */
+.coaching-layout {
+	display: flex;
+	flex-wrap: nowrap;
+	align-items: flex-start;
+	gap: 2rem;
+}
+
+/* Main content takes up most of the width */
+.coaching-layout .main-content {
+	flex: 3;
+}
+
+/* Side panel for Calendly */
+.coaching-sidebar {
+	flex: 1;
+	position: sticky;
+	top: 1rem;
+	background: #f9f9f9;
+	padding: 1rem;
+	border-radius: 8px;
+	box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+	height: fit-content;
+}
+
+/* Responsive fallback: stack sidebar below on small screens */
+@media (max-width: 900px) {
+	.coaching-layout {
+		flex-direction: column;
+	}
+	.coaching-sidebar {
+		position: static;
+		width: 100%;
+	}
+}
+
+/* Coaching clean layout */
+.coaching-clean {
+	background: #fff;
+	color: #000;
+}
+
+.coaching-container {
+	display: flex;
+	flex-wrap: nowrap;
+	align-items: flex-start;
+	gap: 2rem;
+	max-width: 1200px;
+	margin: 2rem auto;
+	padding: 0 1rem;
+}
+
+.coaching-container .main-content {
+	flex: 3;
+}
+
+.coaching-sidebar {
+	flex: 1;
+	position: sticky;
+	top: 2rem;
+	background: none; /* no box */
+	padding: 0;
+}
+
+.lesson-img {
+	max-width: 100%;
+	height: auto;
+	display: block;
+	margin: 1.5rem auto;
+	border-radius: 6px;
+}
+
+.primary-link {
+	display: inline-block;
+	margin-top: 0.5rem;
+	padding: 0.75rem 1.25rem;
+	background: #000;
+	color: #fff;
+	text-decoration: none;
+	font-weight: bold;
+	border-radius: 6px;
+	transition: background 0.3s ease;
+}
+.primary-link:hover {
+	background: #444;
+}
+
+/* Video galleries stay clean */
+.video-gallery {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: flex-start;
+	gap: 1rem;
+	margin: 1rem 0;
+}
+
+.video-gallery iframe {
+	width: 300px;
+	height: 170px;
+	border-radius: 6px;
+}
+
