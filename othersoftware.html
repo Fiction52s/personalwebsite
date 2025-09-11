@@ -4,32 +4,146 @@
 	<meta charset="UTF-8" />
 	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 	<title>Other Software Projects</title>
-    <link rel="stylesheet" href="style.css">
+	<link rel="stylesheet" href="style.css">
 </head>
-<body>
+<body class="matrix-bg">
 	<nav>
 		<ul>
 			<li><a href="index.html">Home</a></li>
-			<li><a href="calendar.html">Book a Session</a></li>
+			<li><a href="coaching.html">Melee Coaching</a></li>
 			<li><a href="kinetic.html">Kinetic: Break All Limits</a></li>
 			<li><a href="artstore.html">Art Store</a></li>
 			<li><a href="othersoftware.html">Other Software Projects</a></li>
 		</ul>
 	</nav>
 
-	<h1>Other Software Projects</h1>
-	<p>Here are some of my other projects outside of Kinetic: Break All Limits:</p>
+	<main class="project-container">
+		<!-- Section 1: Melee Improover -->
+		<section class="project">
+			<h1>Melee Improover</h1>
+			<p class="project-description">
+				Melee Improover is a side project I created to help competitive players of 
+				<em>Super Smash Bros. Melee</em> analyze gameplay and practice more effectively. 
+				The tool provides performance tracking and training insights to make improvement 
+				more accessible and data-driven.
+			</p>
 
-	<section>
-		<h2>Project 1: Utility Tool</h2>
-		<p>A lightweight productivity app that helps with task management and scheduling.</p>
-		<a href="https://github.com/yourusername/project1" target="_blank">View on GitHub</a>
-	</section>
+			<div class="video-wrapper">
+				<iframe 
+					src="https://www.youtube.com/embed/Cu1WzHh8xkY" 
+					title="Melee Improover Demo" 
+					frameborder="0" 
+					allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+					allowfullscreen>
+				</iframe>
+			</div>
 
-	<section>
-		<h2>Project 2: Web Experiment</h2>
-		<p>An interactive web-based experiment in generative visuals and sound.</p>
-		<a href="https://yourwebsite.com/project2" target="_blank">Try it Live</a>
-	</section>
+			<div class="image-gallery">
+				<img src="othersoftware/improover.png" alt="Melee Improover Screenshot 1" class="clickable">
+				<img src="othersoftware/improover2.png" alt="Melee Improover Screenshot 2" class="clickable">
+			</div>
+
+			<p class="project-links">
+				<a href="https://github.com/Fiction52s/Melee-Improover" target="_blank">View on GitHub</a>
+			</p>
+		</section>
+
+		<!-- Section 2: Manga Panel to 3D Print -->
+		<section class="project">
+			<h1>Manga Panel → 3D Print Converter</h1>
+			<p class="project-description">
+				A Python tool that converts manga panels into printable 3D models. This allows 
+				artwork from manga to be transformed into physical objects for creative display 
+				and preservation.
+			</p>
+
+			<div class="image-gallery">
+				<img src="othersoftware/manga1.png" alt="Manga Panel Example" class="clickable">
+			</div>
+		</section>
+
+		<!-- Section 3: Japanese Apps -->
+		<section class="project">
+			<h1>Japanese Learning Apps</h1>
+			<p class="project-description">
+				Three tray-based Japanese learning utilities:
+			</p>
+			<div class="image-gallery">
+				<img src="othersoftware/kanjiapp.png" alt="Kanji Frequency App" class="clickable">
+				<img src="othersoftware/copychecker.png" alt="Clipboard Kanji Analyzer" class="clickable">
+			</div>
+			<ul class="project-description">
+				<li><strong>Kanji Frequency App:</strong> Cycles through a custom-made deck of 12,000 words 
+				and assigns colors to kanji based on frequency. It also reads words aloud, helping learners 
+				practice vocabulary in context.</li>
+				<li><strong>Clipboard Kanji Analyzer:</strong> Monitors the clipboard for Japanese text, 
+				instantly popping up to break down the kanji used. It stores copied kanji for review, 
+				allowing daily review sessions based on actual reading material encountered.</li>
+			</ul>
+		</section>
+
+		<!-- Section 4: Simple Task Tray App -->
+		<section class="project">
+			<h1>Task Tracker Tray App</h1>
+			<p class="project-description">
+				A minimalist tray application for tracking work tasks. It monitors how long 
+				you’ve been working on a task and whether it’s completed. With a quick key 
+				press, the app can be activated at any time to integrate seamlessly into 
+				daily workflows.
+			</p>
+
+			<div class="image-gallery">
+				<img src="othersoftware/todoapp.png" alt="Task Tracker App Screenshot" class="clickable">
+			</div>
+		</section>
+
+		<!-- Section 5: Robot Project -->
+		<section class="project">
+			<h1>Edukits3 Robot Project</h1>
+			<p class="project-description">
+				A small robot built with the Edukit3 hardware kit. I wrote control code that 
+				allows the robot to sense when someone is directly in front of it and respond 
+				by retreating in reverse. This gave it a playful personality and was a fun 
+				introduction to robotics programming.
+			</p>
+
+			<div class="image-gallery">
+				<img src="othersoftware/robot.png" alt="Robot Photo 1" class="clickable">
+				<img src="othersoftware/robot2.jpg" alt="Robot Photo 2" class="clickable">
+			</div>
+		</section>
+	</main>
+
+	<!-- Lightbox Modal -->
+	<div id="lightbox">
+		<span id="close">&times;</span>
+		<img id="lightbox-img" src="" alt="Expanded View">
+	</div>
+
+	<script>
+		// Lightbox functionality
+		const images = document.querySelectorAll(".clickable");
+		const lightbox = document.getElementById("lightbox");
+		const lightboxImg = document.getElementById("lightbox-img");
+		const closeBtn = document.getElementById("close");
+
+		images.forEach(img => {
+			img.addEventListener("click", () => {
+				lightbox.style.display = "flex";
+				lightboxImg.src = img.src;
+				lightboxImg.alt = img.alt;
+			});
+		});
+
+		closeBtn.addEventListener("click", () => {
+			lightbox.style.display = "none";
+		});
+
+		lightbox.addEventListener("click", (e) => {
+			if (e.target === lightbox) {
+				lightbox.style.display = "none";
+			}
+		});
+	</script>
 </body>
 </html>
