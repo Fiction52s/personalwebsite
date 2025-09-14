@@ -1,64 +1,101 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Kinetic</title>
-  <link rel="stylesheet" href="style.css">
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<title>KINETIC: BREAK ALL LIMITS</title>
+	<link rel="stylesheet" href="style.css?v=6">
 </head>
 <body>
-  <nav>
-    <ul>
-      <li><a href="index.html">Home</a></li>
-      <li><a href="kinetic.html">Kinetic</a></li>
-      <li><a href="artprojects.html">Art Projects</a></li>
-      <li><a href="othersoftware.html">Other Software</a></li>
-      <li><a href="coaching.html">Coaching</a></li>
-    </ul>
-  </nav>
+	<!-- Navigation -->
+	<nav>
+		<ul>
+			<li><a href="index.html">Home</a></li>
+			<li><a href="kinetic.html">Kinetic</a></li>
+			<li><a href="coaching.html">Melee Coaching</a></li>
+			<li><a href="othersoftware.html">Other Software</a></li>
+			<li><a href="artprojects.html">Art & Projects</a></li>
+		</ul>
+	</nav>
 
-  <div class="container">
-    <h1 class="kinetic-title">KINETIC</h1>
-    <p class="tagline">Break All Limits</p>
+	<!-- Title + Subtitle -->
+	<header class="section-colored kinetic-header">
+		<div class="container">
+			<h1>KINETIC: BREAK ALL LIMITS</h1>
+			<p class="subtitle">My indie game (Designer/Director)</p>
+		</div>
+	</header>
 
-    <!-- Main Layout -->
-    <div class="kinetic-layout side-by-side">
-      <div class="kinetic-main-image">
-        <img src="kinetic/kinetic_key_art.png" alt="Kinetic Key Art">
-      </div>
-      <div class="kinetic-info">
-        <h2>Game Description</h2>
-        <p>
-          Kinetic is an action-packed indie game focused on movement, combat,
-          and breaking through your limits. Developed to push skill expression
-          and fast-paced decision making.
-        </p>
-        <p class="platforms">Platforms: PC, Console (Early Access)</p>
-        <div class="buttons">
-          <a href="#">Buy Now</a>
-          <a href="#">Press Kit</a>
-        </div>
-      </div>
-    </div>
+	<hr class="section-divider">
 
-    <!-- Features -->
-    <section class="features">
-      <h2>Game Features</h2>
+	<!-- Middle section -->
+	<section class="kinetic-main">
+		<div class="container">
+			<div class="kinetic-layout">
+				<div class="kinetic-main-image">
+					<img src="kinetic/kinetic_key_art.png" alt="Kinetic Key Art">
+				</div>
+				<div class="kinetic-info">
+					<h2>About the Game</h2>
+					<p>
+						KINETIC is a high-speed, precision-based combat platformer. Dash, dodge, and deflect with
+						lightning reflexes while breaking all limits to push your gameplay to the next level.
+					</p>
+					<p class="platforms">Platforms: PC (Steam), more info coming soon.</p>
+					<a href="https://store.steampowered.com/app/1987710/Kinetic_Break_All_Limits/"
+					   class="steam-button" target="_blank" rel="noopener">
+						View on Steam
+					</a>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<hr class="section-divider">
+
+	<!-- Features -->
+	 <!-- Features band -->
+  <section class="section-colored">
+    <div class="container features">
+      <h2 class="kf-title">Game Features</h2>
+
       <div class="features-grid">
         <div class="feature-card">
           <h3>Fast Combat</h3>
+          <img src="kinetic/simpsons.gif" alt="Fast Combat" onclick="openLightbox(this.src)">
           <p>Fluid mechanics and deep combos that reward mastery.</p>
         </div>
+
         <div class="feature-card">
-          <h3>Diverse Environments</h3>
-          <p>Battle through multiple unique stages and challenges.</p>
+          <h3>Stylish Movement</h3>
+          <img src="kinetic/simpsons.gif" alt="Stylish Movement" onclick="openLightbox(this.src)">
+          <p>Precision dashes, cancels, and skill expression at every step.</p>
         </div>
+
         <div class="feature-card">
-          <h3>High Skill Ceiling</h3>
-          <p>Rewarding systems for players who push their abilities to the limit.</p>
+          <h3>Break Limits</h3>
+          <img src="kinetic/simpsons.gif" alt="Break Limits" onclick="openLightbox(this.src)">
+          <p>Systems that push you to go faster, cleaner, and bolder.</p>
         </div>
       </div>
-    </section>
-  </div>
+    </div>
+  </section>
+
+	<!-- Lightbox -->
+	<div id="lightbox" onclick="closeLightbox()">
+		<span id="close">&times;</span>
+		<img id="lightbox-img" src="" alt="Expanded media">
+	</div>
+
+	<script>
+		function openLightbox(src) {
+			document.getElementById("lightbox-img").src = src;
+			document.getElementById("lightbox").style.display = "flex";
+		}
+		function closeLightbox() {
+			document.getElementById("lightbox").style.display = "none";
+			document.getElementById("lightbox-img").src = "";
+		}
+	</script>
 </body>
 </html>
