@@ -792,6 +792,12 @@ h1, h2, h3 {
   min-width: 340px;              /* nice and wide */
 }
 
+/* Dark mode */
+body.dark-mode .kinetic-info {
+  background: #1e1e1e;   /* dark gray background */
+  color: #f1f1f1;        /* light text */
+  box-shadow: 0 4px 12px rgba(0,0,0,0.6);
+}
 
 /* Game Features title only inside Kinetic page */
 .kinetic-layout .features h2 {
@@ -1341,3 +1347,167 @@ hr {
   right: 20px;
   transform: translateY(-50%);
 }
+
+/* ============================
+   DARK MODE STYLES
+   ============================ */
+body.dark-mode {
+  background: #121212;
+  color: #e0e0e0;
+}
+
+/* Navigation Bar */
+body.dark-mode nav {
+  background-color: #1e1e1e;
+}
+body.dark-mode nav ul li a {
+  color: #e0e0e0;
+}
+body.dark-mode nav ul li a:hover {
+  background-color: #333;
+}
+
+/* Headers */
+body.dark-mode h1,
+body.dark-mode h2,
+body.dark-mode h3,
+body.dark-mode .subtitle,
+body.dark-mode .roles {
+  color: #ffffff;
+}
+
+/* Divider */
+body.dark-mode .divider,
+body.dark-mode hr {
+  border-color: #333;
+}
+
+/* Section colored areas */
+body.dark-mode .section-colored {
+  background: #1c1f26;  /* dark grey-blue */
+  color: #e0e0e0;
+}
+
+/* Boxes (projects, features, info panels) */
+body.dark-mode .project-box,
+body.dark-mode .info-box,
+body.dark-mode .feature-card,
+body.dark-mode .details {
+  background: #1e1e1e;
+  color: #e0e0e0;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.6);
+}
+
+/* Captions under images */
+body.dark-mode .caption,
+body.dark-mode #lightbox-caption {
+  color: #bbb;
+}
+
+/* Lightbox */
+body.dark-mode #lightbox {
+  background: rgba(0, 0, 0, 0.95);
+}
+body.dark-mode #close,
+body.dark-mode #prev,
+body.dark-mode #next {
+  color: #fff;
+}
+
+/* Buttons */
+body.dark-mode .steam-button,
+body.dark-mode .steam-link,
+body.dark-mode .primary-link,
+body.dark-mode .project-links a {
+  background: #333;
+  color: #fff;
+}
+body.dark-mode .steam-button:hover,
+body.dark-mode .steam-link:hover,
+body.dark-mode .primary-link:hover,
+body.dark-mode .project-links a:hover {
+  background: #555;
+}
+
+/* Coaching sidebar */
+body.dark-mode .coaching-sidebar {
+  background: #1e1e1e;
+  color: #e0e0e0;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.6);
+}
+
+/* Cards & previews */
+body.dark-mode .preview-card {
+  background: #1e1e1e;
+  color: #e0e0e0;
+}
+body.dark-mode .preview-card p {
+  color: #ccc;
+}
+
+/* Feature images hover */
+body.dark-mode .feature-card img:hover,
+body.dark-mode .image-gallery img:hover,
+body.dark-mode .preview-card:hover img {
+  transform: scale(1.05);
+  box-shadow: 0 4px 14px rgba(255,255,255,0.2);
+}
+
+/* Dark mode base */
+body.dark-mode {
+  background-color: #121212;
+  color: #e0e0e0;
+}
+
+body.dark-mode nav {
+  background-color: #1f1f1f;
+}
+
+body.dark-mode nav a {
+  color: #e0e0e0;
+}
+
+body.dark-mode nav a:hover {
+  color: #ffffff;
+}
+
+/* Boxes in dark mode */
+body.dark-mode .project-box,
+body.dark-mode .info-box,
+body.dark-mode .projects-list .project-split-right {
+  background-color: #1e1e1e;
+  border: 1px solid #333;
+  color: #e0e0e0;
+}
+
+/* Titles */
+body.dark-mode h1,
+body.dark-mode h2,
+body.dark-mode h3 {
+  color: #ffffff;
+}
+
+/* Paragraphs, lists, captions */
+body.dark-mode p,
+body.dark-mode li,
+body.dark-mode .project-description,
+body.dark-mode .caption {
+  color: #cccccc;
+}
+
+/* Divider lines */
+body.dark-mode hr {
+  border-top: 1px solid #444;
+}
+
+/* Lightbox in dark mode */
+body.dark-mode #lightbox {
+  background: rgba(0, 0, 0, 0.95);
+}
+
+body.dark-mode #lightbox-caption {
+  color: #ddd;
+}
+
+
+

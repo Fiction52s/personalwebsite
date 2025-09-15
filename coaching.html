@@ -16,6 +16,7 @@
 			<li><a href="kinetic.html">Kinetic: Break All Limits</a></li>
 			<li><a href="artprojects.html">Art and Other Projects</a></li>
 			<li><a href="othersoftware.html">Other Software Projects</a></li>
+			<li><button id="darkToggle">☀️/🌙</button></li>
 		</ul>
 	</nav>
 
@@ -102,5 +103,24 @@
 			<script type="text/javascript" src="https://assets.calendly.com/assets/external/widget.js" async></script>
 		</aside>
 	</main>
+
+	  <script>
+    const toggle = document.getElementById("darkToggle");
+    const body = document.body;
+
+    // Apply saved theme
+    if (localStorage.getItem("theme") === "dark") {
+      body.classList.add("dark-mode");
+    }
+
+    toggle.addEventListener("click", () => {
+      body.classList.toggle("dark-mode");
+      if (body.classList.contains("dark-mode")) {
+        localStorage.setItem("theme", "dark");
+      } else {
+        localStorage.setItem("theme", "light");
+      }
+    });
+  </script>
 </body>
 </html>
