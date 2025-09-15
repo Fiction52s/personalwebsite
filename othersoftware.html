@@ -1,149 +1,230 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<meta charset="UTF-8" />
-	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-	<title>Other Software Projects</title>
-	<link rel="stylesheet" href="style.css?v=5">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Other Software Projects</title>
+  <link rel="stylesheet" href="style.css?v=19">
+  <style>
+    /* Project section boxes */
+    .project-box {
+      background: #fff;
+      border-radius: 8px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+      margin: 2rem auto;
+      padding: 2rem;
+      max-width: 1200px;
+    }
+
+    .project-split {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 2rem;
+      align-items: flex-start;
+    }
+
+    .project-split-left {
+      flex: 1;
+      min-width: 300px;
+    }
+
+    .project-split-right {
+      flex: 1;
+      min-width: 300px;
+    }
+
+    .info-box {
+      background: #f9f9f9;
+      padding: 1.5rem;
+      border-radius: 8px;
+      box-shadow: inset 0 0 8px rgba(0,0,0,0.05);
+    }
+
+    /* Divider between projects */
+    .project-divider {
+      border: none;
+      border-top: 1px solid #ddd;
+      margin: 2rem auto;
+      max-width: 1200px;
+    }
+  </style>
 </head>
-<body class="matrix-bg">
-	<nav>
-		<ul>
-			<li><a href="index.html">Home</a></li>
-			<li><a href="coaching.html">Melee Coaching</a></li>
-			<li><a href="kinetic.html">Kinetic: Break All Limits</a></li>
-			<li><a href="artprojects.html">Art/Crafts</a></li>
-			<li><a href="othersoftware.html">Other Software Projects</a></li>
-		</ul>
-	</nav>
+<body>
+  <nav>
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="coaching.html">Melee Coaching</a></li>
+      <li><a href="kinetic.html">Kinetic: Break All Limits</a></li>
+      <li><a href="artprojects.html">Art & Other Projects</a></li>
+      <li><a href="othersoftware.html" class="active">Other Software Projects</a></li>
+    </ul>
+  </nav>
 
-	<main class="project-container">
-		<!-- Section 1: Melee Improover -->
-		<section class="project">
-			<h1>Melee Improover</h1>
-			<p class="project-description">
-				Melee Improover is a side project I created to help competitive players of 
-				<em>Super Smash Bros. Melee</em> analyze gameplay and practice more effectively. 
-				The tool provides performance tracking and training insights to make improvement 
-				more accessible and data-driven.
-			</p>
+  <!-- Title Section -->
+  <header class="section-colored projects-header">
+    <div class="container">
+      <h1>Other Software Projects</h1>
+      <p class="subtitle">Side tools, experiments, and prototypes</p>
+    </div>
+  </header>
 
-			<div class="video-wrapper">
-				<iframe 
-					src="https://www.youtube.com/embed/Cu1WzHh8xkY" 
-					title="Melee Improover Demo" 
-					frameborder="0" 
-					allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
-					allowfullscreen>
-				</iframe>
-			</div>
+  <main class="projects-list">
+    <!-- Melee Improover -->
+    <section class="project-box">
+      <div class="project-split">
+        <div class="project-split-left">
+          <div class="video-wrapper">
+            <iframe 
+              src="https://www.youtube.com/embed/Cu1WzHh8xkY" 
+              title="Melee Improover Demo" 
+              frameborder="0" 
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+              allowfullscreen>
+            </iframe>
+          </div>
+          <div class="image-gallery">
+            <img src="othersoftware/improover.png" alt="Melee Improover Screenshot 1" class="clickable">
+            <img src="othersoftware/improover2.png" alt="Melee Improover Screenshot 2" class="clickable">
+          </div>
+        </div>
+        <div class="project-split-right info-box">
+          <h2>Melee Improover</h2>
+          <p>
+            Melee Improover is a side project I created to help competitive players of 
+            <em>Super Smash Bros. Melee</em> analyze gameplay and practice more effectively. 
+            The tool provides performance tracking and training insights to make improvement 
+            more accessible and data-driven.
+          </p>
+          <div class="project-links">
+            <a href="https://github.com/Fiction52s/Melee-Improover" target="_blank">View on GitHub</a>
+          </div>
+        </div>
+      </div>
+    </section>
 
-			<div class="image-gallery">
-				<img src="othersoftware/improover.png" alt="Melee Improover Screenshot 1" class="clickable">
-				<img src="othersoftware/improover2.png" alt="Melee Improover Screenshot 2" class="clickable">
-			</div>
+    <hr class="project-divider">
 
-			<p class="project-links">
-				<a href="https://github.com/Fiction52s/Melee-Improover" target="_blank">View on GitHub</a>
-			</p>
-		</section>
+    <!-- Manga Panel to 3D Print -->
+    <section class="project-box">
+      <div class="project-split">
+        <div class="project-split-left">
+          <div class="image-gallery">
+            <img src="othersoftware/manga1.png" alt="Manga Panel Example" class="clickable">
+          </div>
+        </div>
+        <div class="project-split-right info-box">
+          <h2>Manga Panel → 3D Print Converter</h2>
+          <p>
+            A Python tool that converts manga panels into printable 3D models. This allows 
+            artwork from manga to be transformed into physical objects for creative display 
+            and preservation.
+          </p>
+        </div>
+      </div>
+    </section>
 
-		<!-- Section 2: Manga Panel to 3D Print -->
-		<section class="project">
-			<h1>Manga Panel → 3D Print Converter</h1>
-			<p class="project-description">
-				A Python tool that converts manga panels into printable 3D models. This allows 
-				artwork from manga to be transformed into physical objects for creative display 
-				and preservation.
-			</p>
+    <hr class="project-divider">
 
-			<div class="image-gallery">
-				<img src="othersoftware/manga1.png" alt="Manga Panel Example" class="clickable">
-			</div>
-		</section>
+    <!-- Japanese Apps -->
+    <section class="project-box">
+      <div class="project-split">
+        <div class="project-split-left">
+          <div class="image-gallery">
+            <img src="othersoftware/kanjiapp.png" alt="Kanji Frequency App" class="clickable">
+            <img src="othersoftware/copychecker.png" alt="Clipboard Kanji Analyzer" class="clickable">
+          </div>
+        </div>
+        <div class="project-split-right info-box">
+          <h2>Japanese Learning Apps</h2>
+          <p>Three tray-based Japanese learning utilities:</p>
+          <ul>
+            <li><strong>Kanji Frequency App:</strong> Cycles through a custom-made deck of 12,000 words 
+            and assigns colors to kanji based on frequency. It also reads words aloud, helping learners 
+            practice vocabulary in context.</li>
+            <li><strong>Clipboard Kanji Analyzer:</strong> Monitors the clipboard for Japanese text, 
+            instantly popping up to break down the kanji used. It stores copied kanji for review, 
+            allowing daily review sessions based on actual reading material encountered.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
 
-		<!-- Section 3: Japanese Apps -->
-		<section class="project">
-			<h1>Japanese Learning Apps</h1>
-			<p class="project-description">
-				Three tray-based Japanese learning utilities:
-			</p>
-			<div class="image-gallery">
-				<img src="othersoftware/kanjiapp.png" alt="Kanji Frequency App" class="clickable">
-				<img src="othersoftware/copychecker.png" alt="Clipboard Kanji Analyzer" class="clickable">
-			</div>
-			<ul class="project-description">
-				<li><strong>Kanji Frequency App:</strong> Cycles through a custom-made deck of 12,000 words 
-				and assigns colors to kanji based on frequency. It also reads words aloud, helping learners 
-				practice vocabulary in context.</li>
-				<li><strong>Clipboard Kanji Analyzer:</strong> Monitors the clipboard for Japanese text, 
-				instantly popping up to break down the kanji used. It stores copied kanji for review, 
-				allowing daily review sessions based on actual reading material encountered.</li>
-			</ul>
-		</section>
+    <hr class="project-divider">
 
-		<!-- Section 4: Simple Task Tray App -->
-		<section class="project">
-			<h1>Task Tracker Tray App</h1>
-			<p class="project-description">
-				A minimalist tray application for tracking work tasks. It monitors how long 
-				you’ve been working on a task and whether it’s completed. With a quick key 
-				press, the app can be activated at any time to integrate seamlessly into 
-				daily workflows.
-			</p>
+    <!-- Task Tracker -->
+    <section class="project-box">
+      <div class="project-split">
+        <div class="project-split-left">
+          <div class="image-gallery">
+            <img src="othersoftware/todoapp.png" alt="Task Tracker App Screenshot" class="clickable">
+          </div>
+        </div>
+        <div class="project-split-right info-box">
+          <h2>Task Tracker Tray App</h2>
+          <p>
+            A minimalist tray application for tracking work tasks. It monitors how long 
+            you’ve been working on a task and whether it’s completed. With a quick key 
+            press, the app can be activated at any time to integrate seamlessly into 
+            daily workflows.
+          </p>
+        </div>
+      </div>
+    </section>
 
-			<div class="image-gallery">
-				<img src="othersoftware/todoapp.png" alt="Task Tracker App Screenshot" class="clickable">
-			</div>
-		</section>
+    <hr class="project-divider">
 
-		<!-- Section 5: Robot Project -->
-		<section class="project">
-			<h1>Edukits3 Robot Project</h1>
-			<p class="project-description">
-				A small robot built with the Edukit3 hardware kit. I wrote control code that 
-				allows the robot to sense when someone is directly in front of it and respond 
-				by retreating in reverse. This gave it a playful personality and was a fun 
-				introduction to robotics programming.
-			</p>
+    <!-- Robot Project -->
+    <section class="project-box">
+      <div class="project-split">
+        <div class="project-split-left">
+          <div class="image-gallery">
+            <img src="othersoftware/robot.png" alt="Robot Photo 1" class="clickable">
+            <img src="othersoftware/robot2.jpg" alt="Robot Photo 2" class="clickable">
+          </div>
+        </div>
+        <div class="project-split-right info-box">
+          <h2>Edukits3 Robot Project</h2>
+          <p>
+            A small robot built with the Edukit3 hardware kit. I wrote control code that 
+            allows the robot to sense when someone is directly in front of it and respond 
+            by retreating in reverse. This gave it a playful personality and was a fun 
+            introduction to robotics programming.
+          </p>
+        </div>
+      </div>
+    </section>
+  </main>
 
-			<div class="image-gallery">
-				<img src="othersoftware/robot.png" alt="Robot Photo 1" class="clickable">
-				<img src="othersoftware/robot2.jpg" alt="Robot Photo 2" class="clickable">
-			</div>
-		</section>
-	</main>
+  <!-- Lightbox Modal -->
+  <div id="lightbox">
+    <span id="close">&times;</span>
+    <img id="lightbox-img" src="" alt="Expanded View">
+  </div>
 
-	<!-- Lightbox Modal -->
-	<div id="lightbox">
-		<span id="close">&times;</span>
-		<img id="lightbox-img" src="" alt="Expanded View">
-	</div>
+  <script>
+    // Lightbox functionality
+    const images = document.querySelectorAll(".clickable");
+    const lightbox = document.getElementById("lightbox");
+    const lightboxImg = document.getElementById("lightbox-img");
+    const closeBtn = document.getElementById("close");
 
-	<script>
-		// Lightbox functionality
-		const images = document.querySelectorAll(".clickable");
-		const lightbox = document.getElementById("lightbox");
-		const lightboxImg = document.getElementById("lightbox-img");
-		const closeBtn = document.getElementById("close");
+    images.forEach(img => {
+      img.addEventListener("click", () => {
+        lightbox.style.display = "flex";
+        lightboxImg.src = img.src;
+        lightboxImg.alt = img.alt;
+      });
+    });
 
-		images.forEach(img => {
-			img.addEventListener("click", () => {
-				lightbox.style.display = "flex";
-				lightboxImg.src = img.src;
-				lightboxImg.alt = img.alt;
-			});
-		});
+    closeBtn.addEventListener("click", () => {
+      lightbox.style.display = "none";
+    });
 
-		closeBtn.addEventListener("click", () => {
-			lightbox.style.display = "none";
-		});
-
-		lightbox.addEventListener("click", (e) => {
-			if (e.target === lightbox) {
-				lightbox.style.display = "none";
-			}
-		});
-	</script>
+    lightbox.addEventListener("click", (e) => {
+      if (e.target === lightbox) {
+        lightbox.style.display = "none";
+      }
+    });
+  </script>
 </body>
 </html>

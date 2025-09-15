@@ -1,88 +1,270 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<meta charset="UTF-8" />
-	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-	<title>Art/Crafts</title>
-	<link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Art & Other Projects</title>
+  <link rel="stylesheet" href="style.css?v=18">
+  <style>
+    /* Add box styling */
+    .project-box {
+      background: #fff;
+      border-radius: 8px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      margin: 2rem auto;
+      padding: 2rem;
+      max-width: 1200px;
+    }
+    .project-split {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 2rem;
+    }
+    .project-split-left {
+      flex: 2;
+      min-width: 300px;
+    }
+    .project-split-right {
+      flex: 1;
+      min-width: 250px;
+    }
+    .preview-box img {
+      max-width: 100%;
+      max-height: 400px;
+      object-fit: contain;
+      border-radius: 6px;
+      background: #000; /* keeps size stable */
+      display: block;
+      margin: 0 auto;
+    }
+    .thumbnails {
+      margin-top: 1rem;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+    }
+    .thumbnails img {
+      width: 70px;
+      height: 70px;
+      object-fit: cover;
+      border-radius: 4px;
+      cursor: pointer;
+      transition: transform 0.2s;
+    }
+    .thumbnails img:hover {
+      transform: scale(1.1);
+    }
+    /* Divider between sections */
+    .section-divider {
+      border: none;
+      border-top: 2px solid #eee;
+      margin: 3rem auto;
+      max-width: 1200px;
+    }
+    /* Lightbox */
+    #lightbox {
+      display: none;
+      position: fixed;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      background: rgba(0,0,0,0.9);
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      z-index: 1000;
+    }
+    #lightbox img {
+      max-width: 90%;
+      max-height: 80%;
+      border-radius: 8px;
+    }
+    #lightbox p {
+      margin-top: 1rem;
+      color: #fff;
+      text-align: center;
+    }
+    #close, #prev, #next {
+      position: absolute;
+      font-size: 2rem;
+      color: white;
+      cursor: pointer;
+      user-select: none;
+    }
+    #close { top: 20px; right: 30px; }
+    #prev { left: 30px; top: 50%; transform: translateY(-50%); }
+    #next { right: 30px; top: 50%; transform: translateY(-50%); }
+  </style>
 </head>
 <body>
-	<nav>
-		<ul>
-			<li><a href="index.html">Home</a></li>
-			<li><a href="coaching.html">Melee Coaching</a></li>
-			<li><a href="kinetic.html">Kinetic: Break All Limits</a></li>
-			<li><a href="artprojects.html">Art/Crafts</a></li>
-			<li><a href="othersoftware.html">Other Software Projects</a></li>
-		</ul>
-	</nav>
+  <nav>
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="coaching.html">Melee Coaching</a></li>
+      <li><a href="kinetic.html">Kinetic: Break All Limits</a></li>
+      <li><a href="artprojects.html" class="active">Art & Other Projects</a></li>
+      <li><a href="othersoftware.html">Other Software Projects</a></li>
+    </ul>
+  </nav>
 
-	<main class="project-container">
-		<!-- Resin Projects -->
-		<section class="project">
-			<h1>Resin Projects</h1>
-			<p class="project-description">
-				I've recently started working with resin to preserve flowers and arrange them in ways that I find aesthetically pleasing.
-			</p>
-			<div class="image-gallery">
-				<img src="art/flowers1.jfif" alt="Resin flowers 1">
-				<img src="art/flowers2.jfif" alt="Resin flowers 2">
-				<img src="art/flowers3.jfif" alt="Resin flowers 3">
-				<img src="art/flowers4.jfif" alt="Resin flowers 4">
-				<img src="art/hex1.jfif" alt="Resin hexagon 1">
-				<img src="art/hex2.jfif" alt="Resin hexagon 2">
-			</div>
-		</section>
+  <!-- Title Section -->
+  <header class="section-colored projects-header">
+    <div class="container">
+      <h1>Art and Other Projects</h1>
+      <p class="subtitle">placeholder subtitle</p>
+    </div>
+  </header>
 
-		<!-- 3D Painted Models -->
-		<section class="project">
-			<h2>3D Painted Models</h2>
-			<p class="project-description">
-				I’ve also been painting 3D printed models. Here are some of the works I’ve finished so far:
-			</p>
-			<div class="image-gallery">
-				<img src="art/3dpainted.jfif" alt="3D Painted Model">
-				<img src="art/paintedfalcos.jfif" alt="Painted Falcos">
-				<img src="art/paintedsheik.jfif" alt="Painted Sheik">
-				<img src="art/sleepingfox.jfif" alt="Sleeping Fox">
-				<img src="art/unpaintedfalco.jfif" alt="Unpainted Falco">
-			</div>
-		</section>
+  <main class="projects-list">
+    <!-- Resin Projects -->
+    <section class="project-box">
+      <div class="project-split">
+        <div class="project-split-left">
+          <div class="preview-box">
+            <div class="preview-inner">
+              <img src="art/flowers1.jfif" alt="Resin flowers 1" data-caption="First resin flower piece">
+            </div>
+            <p class="caption">First resin flower piece</p>
+          </div>
+          <div class="thumbnails">
+            <img src="art/flowers2.jfif" alt="Resin flowers 2" data-caption="Another preserved flower">
+            <img src="art/flowers3.jfif" alt="Resin flowers 3" data-caption="Set of floral resin art">
+            <img src="art/flowers4.jfif" alt="Resin flowers 4" data-caption="Fourth resin piece">
+            <img src="art/hex1.jfif" alt="Resin hexagon 1" data-caption="Abstract resin hexagon">
+            <img src="art/hex2.jfif" alt="Resin hexagon 2" data-caption="Second resin hexagon piece">
+          </div>
+        </div>
+        <div class="project-split-right info-box">
+          <h2>Resin Projects</h2>
+          <p>I've recently started working with resin to preserve flowers and arrange them in ways that I find aesthetically pleasing.</p>
+        </div>
+      </div>
+    </section>
 
-		<!-- Combination Project -->
-		<section class="project">
-			<h2>Combining Resin and 3D Models</h2>
-			<p class="project-description">
-				My plan is to combine these two hobbies by pairing painted 3D figurines with resin bases. Here’s an early example:
-			</p>
-			<div class="image-gallery">
-				<img src="art/falco1.jfif" alt="Falco with resin base">
-			</div>
-		</section>
-	</main>
+    <hr class="section-divider">
 
-	<!-- Lightbox Overlay for enlarging images -->
-	<div id="lightbox">
-		<span id="close">&times;</span>
-		<img id="lightbox-img" src="" alt="Expanded view">
-	</div>
+    <!-- 3D Painted Models -->
+    <section class="project-box">
+      <div class="project-split">
+        <div class="project-split-left">
+          <div class="preview-box">
+            <div class="preview-inner">
+              <img src="art/3dpainted.jfif" alt="3D Painted Model" data-caption="Painted 3D model">
+            </div>
+            <p class="caption">Painted 3D model</p>
+          </div>
+          <div class="thumbnails">
+            <img src="art/paintedfalcos.jfif" alt="Painted Falcos" data-caption="Falco figurines painted by hand">
+            <img src="art/paintedsheik.jfif" alt="Painted Sheik" data-caption="Sheik figurine, hand painted">
+            <img src="art/sleepingfox.jfif" alt="Sleeping Fox" data-caption="Cute fox in resting pose">
+            <img src="art/unpaintedfalco.jfif" alt="Unpainted Falco" data-caption="Unpainted Falco figurine before work">
+          </div>
+        </div>
+        <div class="project-split-right info-box">
+          <h2>3D Painted Models</h2>
+          <p>I’ve also been painting 3D printed models. Here are some of the works I’ve finished so far:</p>
+        </div>
+      </div>
+    </section>
 
-	<script>
-		// Lightbox functionality
-		const lightbox = document.getElementById("lightbox");
-		const lightboxImg = document.getElementById("lightbox-img");
-		const close = document.getElementById("close");
+    <hr class="section-divider">
 
-		document.querySelectorAll(".image-gallery img").forEach(img => {
-			img.addEventListener("click", () => {
-				lightbox.style.display = "flex";
-				lightboxImg.src = img.src;
-			});
-		});
+    <!-- Combination Project -->
+    <section class="project-box">
+      <div class="project-split">
+        <div class="project-split-left">
+          <div class="preview-box">
+            <div class="preview-inner">
+              <img src="art/falco1.jfif" alt="Falco with resin base" data-caption="Falco figurine with resin base">
+            </div>
+            <p class="caption">Falco figurine with resin base</p>
+          </div>
+          <div class="thumbnails">
+            <img src="art/falco1.jfif" alt="Falco with resin base" data-caption="Falco figurine with resin base">
+          </div>
+        </div>
+        <div class="project-split-right info-box">
+          <h2>Combining Resin and 3D Models</h2>
+          <p>My plan is to combine these two hobbies by pairing painted 3D figurines with resin bases. Here’s an early example.</p>
+        </div>
+      </div>
+    </section>
+  </main>
 
-		close.addEventListener("click", () => {
-			lightbox.style.display = "none";
-		});
-	</script>
+  <!-- Lightbox Overlay -->
+  <div id="lightbox">
+    <span id="close">&times;</span>
+    <span id="prev">&#10094;</span>
+    <img id="lightbox-img" src="" alt="Expanded view">
+    <span id="next">&#10095;</span>
+    <p id="lightbox-caption"></p>
+  </div>
+
+  <script>
+    const projectSplits = document.querySelectorAll(".project-split");
+
+    let currentImages = [];
+    let currentIndex = 0;
+
+    projectSplits.forEach(split => {
+      const previewImg = split.querySelector(".preview-box img");
+      const previewCaption = split.querySelector(".caption");
+      const thumbs = split.querySelectorAll(".thumbnails img");
+
+      const images = Array.from(thumbs);
+
+      if (images.length > 0) {
+        previewImg.src = images[0].src;
+        previewCaption.textContent = images[0].dataset.caption || images[0].alt;
+      }
+
+      thumbs.forEach((thumb, i) => {
+        thumb.addEventListener("mouseover", () => {
+          previewImg.src = thumb.src;
+          previewCaption.textContent = thumb.dataset.caption || thumb.alt;
+        });
+        thumb.addEventListener("click", () => {
+          openLightbox(images, i);
+        });
+      });
+
+      previewImg.addEventListener("click", () => {
+        openLightbox(images, 0);
+      });
+    });
+
+    const lightbox = document.getElementById("lightbox");
+    const lightboxImg = document.getElementById("lightbox-img");
+    const lightboxCaption = document.getElementById("lightbox-caption");
+    const closeBtn = document.getElementById("close");
+    const prevBtn = document.getElementById("prev");
+    const nextBtn = document.getElementById("next");
+
+    function openLightbox(images, idx) {
+      currentImages = images;
+      currentIndex = idx;
+      showImage(currentIndex);
+      lightbox.style.display = "flex";
+    }
+
+    function showImage(index) {
+      currentIndex = (index + currentImages.length) % currentImages.length;
+      const imgEl = currentImages[currentIndex];
+      lightboxImg.src = imgEl.src;
+      lightboxCaption.textContent = imgEl.dataset.caption || imgEl.alt;
+    }
+
+    closeBtn.addEventListener("click", () => {
+      lightbox.style.display = "none";
+    });
+    prevBtn.addEventListener("click", () => showImage(currentIndex - 1));
+    nextBtn.addEventListener("click", () => showImage(currentIndex + 1));
+    window.addEventListener("keydown", (e) => {
+      if (lightbox.style.display === "flex") {
+        if (e.key === "ArrowLeft") showImage(currentIndex - 1);
+        if (e.key === "ArrowRight") showImage(currentIndex + 1);
+        if (e.key === "Escape") lightbox.style.display = "none";
+      }
+    });
+  </script>
 </body>
 </html>
