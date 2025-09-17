@@ -6,6 +6,34 @@
   <title>Shephard Lima / Fiction</title>
   <link rel="stylesheet" href="style.css?v=30">
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Montserrat:wght@600;700&display=swap" rel="stylesheet">
+
+  <!-- Mobile-only overrides: keep opener images in a single row and stack preview cards -->
+  <style>
+    @media (max-width: 768px) {
+      /* Force the top 3 images to stay on one line */
+      .opener-row {
+        display: flex;           /* ensure flex even if base CSS changes */
+        flex-wrap: nowrap;       /* DO NOT wrap to next line */
+        gap: 0.5rem;
+        overflow: hidden;        /* hide any tiny overflow */
+        margin: 1rem auto 1.5rem;
+      }
+      .opener-row img {
+        flex: 1 1 0;             /* 3 equal columns */
+        min-width: 0 !important; /* override base 280px min-width */
+        height: 120px;           /* uniform height on mobile */
+        object-fit: cover;       /* crop instead of squish */
+        border-radius: 8px;
+      }
+
+      /* Stack the 2x2 grid into a single column on mobile */
+      .preview-grid {
+        grid-template-columns: 1fr !important;
+        gap: 1rem;
+        padding: 1rem;
+      }
+    }
+  </style>
 </head>
 <body class="main-clean">
   <nav>
@@ -24,11 +52,14 @@
     <p class="roles">
       Game Designer · Programmer · Content Creator · Pro Gamer · Coach
     </p>
+
+    <!-- These keep desktop styling from style.css; mobile is handled by the media query above -->
     <div class="opener-row">
       <img src="opener_boxing.jpg" alt="Boxing image">
       <img src="opener_board.png" alt="Board image">
       <img src="opener_mic.jpeg" alt="Mic image">
     </div>
+
     <hr class="divider">
   </header>
 
