@@ -4,21 +4,15 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Art & Other Projects</title>
-  <link rel="stylesheet" href="style.css?v=30">
+  <link rel="stylesheet" href="style.css?v=31">
   <style>
-    /* Add box styling */
-    .project-box {
-      background: #fff;
-      border-radius: 8px;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-      margin: 2rem auto;
-      padding: 2rem;
-      max-width: 1200px;
-    }
     .project-split {
       display: flex;
       flex-wrap: wrap;
       gap: 2rem;
+      max-width: 1200px;
+      margin: 2rem auto;
+      padding: 0 1rem;
     }
     .project-split-left {
       flex: 2;
@@ -103,7 +97,7 @@
       <li><a href="kinetic.html">Kinetic: Break All Limits</a></li>
       <li><a href="artprojects.html" class="active">Art and Other Projects</a></li>
       <li><a href="othersoftware.html">Other Software Projects</a></li>
-	  <li><button id="darkToggle">☀️/🌙</button></li>
+      <li><button id="darkToggle">☀️/🌙</button></li>
     </ul>
   </nav>
 
@@ -117,7 +111,7 @@
 
   <main class="projects-list">
     <!-- Resin Projects -->
-    <section class="project-box">
+    <section>
       <div class="project-split">
         <div class="project-split-left">
           <div class="preview-box">
@@ -144,7 +138,7 @@
     <hr class="section-divider">
 
     <!-- 3D Painted Models -->
-    <section class="project-box">
+    <section>
       <div class="project-split">
         <div class="project-split-left">
           <div class="preview-box">
@@ -170,7 +164,7 @@
     <hr class="section-divider">
 
     <!-- Combination Project -->
-    <section class="project-box">
+    <section>
       <div class="project-split">
         <div class="project-split-left">
           <div class="preview-box">
@@ -268,11 +262,10 @@
     });
   </script>
 
-  	  <script>
+  <script>
     const toggle = document.getElementById("darkToggle");
     const body = document.body;
 
-    // Apply saved theme
     if (localStorage.getItem("theme") === "dark") {
       body.classList.add("dark-mode");
     }

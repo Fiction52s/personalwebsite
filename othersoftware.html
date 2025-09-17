@@ -4,23 +4,16 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Other Software Projects</title>
-  <link rel="stylesheet" href="style.css?v=30">
+  <link rel="stylesheet" href="style.css?v=31">
   <style>
-    /* Project section boxes */
-    .project-box {
-      background: #fff;
-      border-radius: 8px;
-      box-shadow: 0 4px 12px rgba(66, 59, 59, 0.15);
-      margin: 2rem auto;
-      padding: 2rem;
-      max-width: 1200px;
-    }
-
     .project-split {
       display: flex;
       flex-wrap: wrap;
       gap: 2rem;
       align-items: flex-start;
+      max-width: 1200px;
+      margin: 2rem auto;
+      padding: 0 1rem;
     }
 
     .project-split-left {
@@ -47,6 +40,32 @@
       margin: 2rem auto;
       max-width: 1200px;
     }
+
+    /* Lightbox */
+    #lightbox {
+      display: none;
+      position: fixed;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      background: rgba(0,0,0,0.9);
+      justify-content: center;
+      align-items: center;
+      z-index: 1000;
+    }
+    #lightbox img {
+      max-width: 90%;
+      max-height: 80%;
+      border-radius: 8px;
+    }
+    #close {
+      position: absolute;
+      top: 20px;
+      right: 30px;
+      font-size: 2rem;
+      color: white;
+      cursor: pointer;
+      user-select: none;
+    }
   </style>
 </head>
 <body>
@@ -57,7 +76,7 @@
       <li><a href="kinetic.html">Kinetic: Break All Limits</a></li>
       <li><a href="artprojects.html">Art and Other Projects</a></li>
       <li><a href="othersoftware.html" class="active">Other Software Projects</a></li>
-	  <li><button id="darkToggle">☀️/🌙</button></li>
+      <li><button id="darkToggle">☀️/🌙</button></li>
     </ul>
   </nav>
 
@@ -71,7 +90,7 @@
 
   <main class="projects-list">
     <!-- Melee Improover -->
-    <section class="project-box">
+    <section>
       <div class="project-split">
         <div class="project-split-left">
           <div class="video-wrapper">
@@ -106,7 +125,7 @@
     <hr class="project-divider">
 
     <!-- Manga Panel to 3D Print -->
-    <section class="project-box">
+    <section>
       <div class="project-split">
         <div class="project-split-left">
           <div class="image-gallery">
@@ -127,7 +146,7 @@
     <hr class="project-divider">
 
     <!-- Japanese Apps -->
-    <section class="project-box">
+    <section>
       <div class="project-split">
         <div class="project-split-left">
           <div class="image-gallery">
@@ -153,7 +172,7 @@
     <hr class="project-divider">
 
     <!-- Task Tracker -->
-    <section class="project-box">
+    <section>
       <div class="project-split">
         <div class="project-split-left">
           <div class="image-gallery">
@@ -175,7 +194,7 @@
     <hr class="project-divider">
 
     <!-- Robot Project -->
-    <section class="project-box">
+    <section>
       <div class="project-split">
         <div class="project-split-left">
           <div class="image-gallery">
@@ -232,7 +251,6 @@
     const toggle = document.getElementById("darkToggle");
     const body = document.body;
 
-    // Apply saved theme
     if (localStorage.getItem("theme") === "dark") {
       body.classList.add("dark-mode");
     }
