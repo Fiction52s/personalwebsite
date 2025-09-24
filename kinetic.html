@@ -5,6 +5,46 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 	<title>KINETIC: BREAK ALL LIMITS</title>
 	<link rel="stylesheet" href="style.css?v=30">
+	<style>
+		/* Mobile-only tweaks */
+		@media (max-width: 768px) {
+			/* Force vertical stack */
+			.kinetic-layout {
+				display: flex;
+				flex-direction: column;
+				align-items: center;
+				gap: 1rem;
+			}
+
+			.kinetic-main-image img {
+				width: 100%;
+				height: auto;
+				display: block;
+				margin: 0 auto;
+			}
+
+			.kinetic-info {
+				width: 100%;
+				max-width: 100%;
+				box-sizing: border-box;
+			}
+
+			/* Features grid single column */
+			.features-grid {
+				grid-template-columns: 1fr !important;
+				gap: 1.5rem;
+			}
+
+			/* Reduce vertical spacing */
+			.section-divider {
+				margin: 1.5rem auto;
+			}
+
+			section {
+				padding-bottom: 1.5rem;
+			}
+		}
+	</style>
 </head>
 <body>
 	<!-- Navigation -->
@@ -15,7 +55,7 @@
 			<li><a href="kinetic.html">Kinetic: Break All Limits</a></li>
 			<li><a href="artprojects.html">Art and Other Projects</a></li>
 			<li><a href="othersoftware.html">Other Software Projects</a></li>
-      <li><button id="darkToggle">☀️/🌙</button></li>
+      		<li><button id="darkToggle">☀️/🌙</button></li>
 		</ul>
 	</nav>
 
@@ -55,32 +95,28 @@
 	<hr class="section-divider">
 
 	<!-- Features -->
-	 <!-- Features band -->
-  <section class="section-colored">
-    <div class="container features">
-      <h2 class="kf-title">Game Features</h2>
-
-      <div class="features-grid">
-        <div class="feature-card">
-          <h3>Fast Combat</h3>
-          <img src="kinetic/simpsons.gif" alt="Fast Combat" onclick="openLightbox(this.src)">
-          <p>Fluid mechanics and deep combos that reward mastery.</p>
-        </div>
-
-        <div class="feature-card">
-          <h3>Stylish Movement</h3>
-          <img src="kinetic/simpsons.gif" alt="Stylish Movement" onclick="openLightbox(this.src)">
-          <p>Precision dashes, cancels, and skill expression at every step.</p>
-        </div>
-
-        <div class="feature-card">
-          <h3>Break Limits</h3>
-          <img src="kinetic/simpsons.gif" alt="Break Limits" onclick="openLightbox(this.src)">
-          <p>Systems that push you to go faster, cleaner, and bolder.</p>
-        </div>
-      </div>
-    </div>
-  </section>
+	<section class="section-colored">
+		<div class="container features">
+			<h2 class="kf-title">Game Features</h2>
+			<div class="features-grid">
+				<div class="feature-card">
+					<h3>Fast Combat</h3>
+					<img src="kinetic/simpsons.gif" alt="Fast Combat" onclick="openLightbox(this.src)">
+					<p>Fluid mechanics and deep combos that reward mastery.</p>
+				</div>
+				<div class="feature-card">
+					<h3>Stylish Movement</h3>
+					<img src="kinetic/simpsons.gif" alt="Stylish Movement" onclick="openLightbox(this.src)">
+					<p>Precision dashes, cancels, and skill expression at every step.</p>
+				</div>
+				<div class="feature-card">
+					<h3>Break Limits</h3>
+					<img src="kinetic/simpsons.gif" alt="Break Limits" onclick="openLightbox(this.src)">
+					<p>Systems that push you to go faster, cleaner, and bolder.</p>
+				</div>
+			</div>
+		</div>
+	</section>
 
 	<!-- Lightbox -->
 	<div id="lightbox" onclick="closeLightbox()">
@@ -98,23 +134,22 @@
 			document.getElementById("lightbox-img").src = "";
 		}
 	</script>
-  	  <script>
-    const toggle = document.getElementById("darkToggle");
-    const body = document.body;
+	<script>
+		const toggle = document.getElementById("darkToggle");
+		const body = document.body;
 
-    // Apply saved theme
-    if (localStorage.getItem("theme") === "dark") {
-      body.classList.add("dark-mode");
-    }
+		if (localStorage.getItem("theme") === "dark") {
+			body.classList.add("dark-mode");
+		}
 
-    toggle.addEventListener("click", () => {
-      body.classList.toggle("dark-mode");
-      if (body.classList.contains("dark-mode")) {
-        localStorage.setItem("theme", "dark");
-      } else {
-        localStorage.setItem("theme", "light");
-      }
-    });
-  </script>
+		toggle.addEventListener("click", () => {
+			body.classList.toggle("dark-mode");
+			if (body.classList.contains("dark-mode")) {
+				localStorage.setItem("theme", "dark");
+			} else {
+				localStorage.setItem("theme", "light");
+			}
+		});
+	</script>
 </body>
 </html>

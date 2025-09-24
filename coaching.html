@@ -6,7 +6,47 @@
 	<title>Melee Coaching - Fiction</title>
 	<link rel="stylesheet" href="style.css?v=30">
 	<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Montserrat:wght@600;700&display=swap" rel="stylesheet">
+  <style>
+    /* Desktop layout: 2-column grid */
+    @media (min-width: 901px) {
+      .coaching-container {
+        display: grid;
+        grid-template-columns: 3fr 1.2fr;
+        gap: 2rem;
+        max-width: 1200px;
+        margin: 2rem auto;
+        padding: 0 1rem;
+        align-items: start;
+      }
+      .coaching-sidebar-desktop {
+        display: block;
+        position: sticky;
+        top: 2rem;
+        align-self: start;
+      }
+      .coaching-sidebar-mobile {
+        display: none;
+      }
+    }
 
+    /* Mobile layout: single column */
+    @media (max-width: 900px) {
+      .coaching-container {
+        display: flex;
+        flex-direction: column;
+        max-width: 1200px;
+        margin: 2rem auto;
+        padding: 0 1rem;
+      }
+      .coaching-sidebar-desktop {
+        display: none;
+      }
+      .coaching-sidebar-mobile {
+        display: block;
+        margin: 1rem 0 1.5rem 0;
+      }
+    }
+  </style>
 </head>
 <body class="coaching-clean">
 	<nav>
@@ -39,8 +79,14 @@
 				<img src="coaching/lesson1.png" alt="Coaching lesson screenshot" class="lesson-img">
 			</section>
 
+      <!-- Calendly for Mobile (only visible <=900px) -->
+      <aside class="coaching-sidebar-mobile">
+        <div class="calendly-inline-widget" data-url="https://calendly.com/fiction52s/60min" style="min-width:320px;height:600px;"></div>
+        <script type="text/javascript" src="https://assets.calendly.com/assets/external/widget.js" async></script>
+      </aside>
+
 			<!-- Metafy Course -->
-			<section>
+			<section class="metafy-section">
 				<h2>Falco Full Course on Metafy</h2>
 				<p>
 					For players looking to dive deep, I’ve created a professional-level Falco course, 
@@ -97,14 +143,14 @@
 			</section>
 		</div>
 
-		<!-- Calendly Sidebar -->
-		<aside class="coaching-sidebar">
-			<div class="calendly-inline-widget" data-url="https://calendly.com/fiction52s/60min" style="min-width:320px;height:600px;"></div>
-			<script type="text/javascript" src="https://assets.calendly.com/assets/external/widget.js" async></script>
-		</aside>
+    <!-- Calendly for Desktop (sticky sidebar, only visible >900px) -->
+    <aside class="coaching-sidebar-desktop">
+      <div class="calendly-inline-widget" data-url="https://calendly.com/fiction52s/60min" style="min-width:320px;height:600px;"></div>
+      <script type="text/javascript" src="https://assets.calendly.com/assets/external/widget.js" async></script>
+    </aside>
 	</main>
 
-	  <script>
+	<script>
     const toggle = document.getElementById("darkToggle");
     const body = document.body;
 
